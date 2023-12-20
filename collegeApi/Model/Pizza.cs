@@ -19,5 +19,9 @@ namespace collegeApi.Model
 
         [Compare(nameof(Order))]
         public string ConfirmOrder {  get; set; }
+
+        [Range(100, 5000)]
+        [PriceValidator(ErrorMessage = "Price is not valid")]
+        public int price { get; set; }
     }
 }
