@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using PizzaApi.Validator;
+using System.ComponentModel.DataAnnotations;
 
 namespace collegeApi.Model
 {
@@ -8,17 +9,17 @@ namespace collegeApi.Model
         [Required]
         public int Id { get; set; }
 
-        [StringLength(20,ErrorMessage ="Name Should have less than 20 Charaters")]
+        //[StringLength(20,ErrorMessage ="Name Should have less than 20 Charaters")]
         public string? Name { get; set; }
 
         [Required]
         public bool IsGlutenFree { get; set; }
 
         [Required]
-        public string Order { get; set; }
+        public string? Order { get; set; }
 
         [Compare(nameof(Order))]
-        public string ConfirmOrder {  get; set; }
+        public string? ConfirmOrder {  get; set; }
 
         [Range(100, 5000)]
         [PriceValidator(ErrorMessage = "Price is not valid")]
