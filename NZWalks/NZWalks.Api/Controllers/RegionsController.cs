@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using NZWalks.Api.Data;
 using NZWalks.Api.Model.Domain;
 using NZWalks.Api.Models.Domain.DTO;
+using System.ComponentModel;
 using System.Runtime.InteropServices;
 
 namespace NZWalks.Api.Controllers
@@ -42,8 +43,6 @@ namespace NZWalks.Api.Controllers
         [HttpGet]
         [Route("id:Guid")]
         public IActionResult GetById([FromRoute]Guid id) {
-
-
           //there is both the method for the getting the elemnt by id 1.one methd is the FIND method
           //2.  the LINQ method  that use the FirstOrDefault.
          //  var region= dbContext.Regions.Find(id);
@@ -54,5 +53,14 @@ namespace NZWalks.Api.Controllers
             }
             return Ok(region);
         }
+
+        //tihis  the post to create new Region.
+        [HttpPost]
+
+        public IActionResult Create([FromBody] AddRegionRequestDto addRegionRequestDto)
+        {
+            
+        }
+       
     }
 }
