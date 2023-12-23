@@ -20,9 +20,9 @@ namespace NZWalks.Api.Controllers
 
         [HttpGet]
         public IActionResult GetAll()
-        {
+        {   //this is for the  data that is hardcoded above approach also use the dB data use.
             /*var regions=new List<Region> {
-*//*                new Region
+                new Region
                 {
                     Id=Guid.NewGuid(),
                     Name="Auckland",
@@ -36,7 +36,7 @@ namespace NZWalks.Api.Controllers
                     Code="WelG",
                     RegionImageUrl="https://wellington.govt.nz/wellington-city/about-wellington-city/profile-of-wellington"
 
-                }*//*
+                }
             }; 
 */
             var regions = dbContext.Regions.ToList();
